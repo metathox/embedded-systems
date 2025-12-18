@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="home">Embedded Systems: Home</title>
+
+    <link rel="stylesheet" href="./Styles/main.css" />
+    <link rel="stylesheet" href="./Styles/home.css" />
+  </head>
+
+  <body id="body-wrapper" class="p-0">
+    <aside class="sidebar-rail">
+      <button
+        class="btn-outline open-sidebar w-10 h-10 rounded-lg transition-colors shadow-sm"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </aside>
+
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/60 z-[150] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"
+    ></div>
+
+    <aside id="sidebar" class="sidebar-drawer overflow-y-auto no-scrollbar">
+      <nav
+        class="mobile-nav-group hidden border-b border-[var(--border-color)] mb-0 pb-0"
+      >
+        <div class="navigation-header border-b border-[var(--border-color)]">
+          <h3
+            class="text-xl font-bold tracking-tight text-accent"
+            data-i18n="mobile_navigation"
+          >
+            Navigation
+          </h3>
+
+          <button
+            id="close-sidebar-mobile"
+            class="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <a
+          href="./index.html"
+          class="block nav-link-active text-lg font-bold hover:text-accent transition-colors"
+          data-i18n="nav_home"
+          >Home</a
+        >
+        <a
+          href="./Pages/architecture.html"
+          class="block nav-link text-lg font-bold hover:text-accent transition-colors"
+          data-i18n="nav_architecture"
+          >Architecture</a
+        >
+        <a
+          href="./Pages/firmware.html"
+          class="block nav-link text-lg font-bold hover:text-accent transition-colors"
+          data-i18n="nav_firmware"
+          >Firmware</a
+        >
+        <a
+          href="./Pages/software.html"
+          class="block nav-link text-lg font-bold hover:text-accent transition-colors"
+          data-i18n="nav_software"
+          >Software</a
+        >
+        <div class="mobile-dropdown-wrapper">
+          <button
+            onclick="toggleMobileDropdown(this)"
+            class="w-full text-left block nav-link text-lg font-bold hover:text-accent transition-colors flex justify-between items-center"
+          >
+            <span data-i18n="nav_sources">Sources</span>
+            <svg
+              class="w-5 h-5 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <div
+            class="mobile-dropdown-content hidden pl-4 border-l-2 border-[var(--border-color)] mt-1 mb-2 space-y-1"
+          >
+            <a
+              href="https://gwfh.mranftl.com/fonts/inter?subsets=latin"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source1 block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >Google Fonts</a
+            >
+            <a
+              href="https://www.theengineeringprojects.com/2018/03/introduction-to-microcontrollers.html"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source2 block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >The Engineering Projects</a
+            >
+            <a
+              href="https://www.coursera.org/learn/computer-architecture"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source3 block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >Coursera</a
+            >
+            <a
+              href="https://www.embedded.com/embedded-firmware-what-is-it-and-why-does-it-matter/"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source4 block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >Embedded.com</a
+            >
+            <a
+              href="https://www.geeksforgeeks.org/finite-state-machines-in-embedded-systems/"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source5 block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >GeeksforGeeks</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="tools flex justify-between items-center border-b border-[var(--border-color)]"
+      >
+        <h2
+          class="text-xl font-bold tracking-tight text-accent"
+          data-i18n="sidebar_title"
+        >
+          Tools
+        </h2>
+        <button
+          id="close-sidebar-desktop"
+          class="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mb-4">
+        <h3
+          class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]"
+          data-i18n="cat_coding"
+        >
+          Coding Environment
+        </h3>
+        <a
+          href="https://code.visualstudio.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-link group"
+        >
+          <div
+            class="tool-icon bg-rose-50 text-blue-700 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h4
+              class="font-bold text-sm group-hover:text-blue-700 transition-colors"
+            >
+              VS Code
+            </h4>
+            <p class="text-xs opacity-70 mt-1" data-i18n="desc_vscode">
+              Lightweight & extensible.
+            </p>
+          </div>
+        </a>
+        <a
+          href="https://visualstudio.microsoft.com/vs/community/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-link group"
+        >
+          <div
+            class="tool-icon bg-rose-50 text-purple-700 group-hover:bg-purple-700 group-hover:text-white transition-colors shadow-sm"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+              ></path>
+            </svg>
+          </div>
+          <div class="vs2022">
+            <h4
+              class="font-bold text-sm group-hover:text-purple-700 transition-colors"
+            >
+              Visual Studio 2022
+            </h4>
+            <p class="text-xs opacity-70 mt-1" data-i18n="desc_vs2022">
+              Heavyweight IDE.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="mb-6">
+        <h3
+          class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]"
+          data-i18n="cat_engineering"
+        >
+          Engineering
+        </h3>
+        <a
+          href="https://www.st.com/en/development-tools/stm32cubeide.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-link group"
+        >
+          <div
+            class="tool-icon bg-rose-50 text-sky-700 group-hover:bg-sky-700 group-hover:text-white transition-colors shadow-sm"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+              ></path>
+            </svg>
+          </div>
+          <div class="mt-1">
+            <h4
+              class="font-bold text-sm group-hover:text-sky-700 transition-colors"
+            >
+              STM32CubeIDE
+            </h4>
+            <p class="text-xs opacity-70 mt-1" data-i18n="desc_cube">
+              Official STM32 toolchain.
+            </p>
+          </div>
+        </a>
+        <a
+          href="https://www.labcenter.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-link group"
+        >
+          <div
+            class="tool-icon bg-rose-50 text-green-700 group-hover:bg-green-700 group-hover:text-white transition-colors shadow-sm"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h4
+              class="font-bold text-sm group-hover:text-green-700 transition-colors"
+            >
+              Proteus
+            </h4>
+            <p class="text-xs opacity-70 mt-1" data-i18n="desc_proteus">
+              Electronics simulation.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="mb-6">
+        <h3
+          class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]"
+          data-i18n="cat_pcb"
+        >
+          PCB Design
+        </h3>
+        <a
+          href="https://www.kicad.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-link group"
+        >
+          <div
+            class="tool-icon bg-rose-50 text-indigo-700 group-hover:bg-indigo-700 group-hover:text-white transition-colors shadow-sm"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+              ></path>
+            </svg>
+          </div>
+          <div class="mt-1">
+            <h4
+              class="font-bold text-sm group-hover:text-indigo-700 transition-colors"
+            >
+              KiCad
+            </h4>
+            <p class="text-xs opacity-70 mt-1" data-i18n="desc_kicad">
+              Open-source standard.
+            </p>
+          </div>
+        </a>
+        <a
+          href="https://www.altium.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tool-link group"
+        >
+          <div
+            class="tool-icon bg-rose-50 text-rose-700 group-hover:bg-rose-700 group-hover:text-white transition-colors shadow-sm"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+              ></path>
+            </svg>
+          </div>
+          <div class="mt-1">
+            <h4
+              class="font-bold text-sm group-hover:text-rose-700 transition-colors"
+            >
+              Altium Designer
+            </h4>
+            <p class="text-xs opacity-70 mt-1" data-i18n="desc_altium">
+              Premium PCB choice.
+            </p>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <header
+      class="header-container p-4 rounded-xl mb-12 flex flex-col xl:flex-row justify-between items-center gap-6"
+    >
+      <div class="flex items-center gap-2">
+        <button
+          class="mobile-menu-btn open-sidebar hidden btn-outline w-10 h-10 rounded-lg mr-2 items-center justify-center transition-colors shadow-sm"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+        <svg
+          class="w-8 h-8 text-accent"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+          ></path>
+        </svg>
+        <h1 class="text-xl font-extrabold tracking-tight" data-i18n="nav_name">
+          Embedded Systems
+        </h1>
+      </div>
+
+      <nav
+        class="hidden md:flex w-full xl:w-auto justify-center gap-4 xl:gap-8 text-sm font-bold tracking-wide mt-2 xl:mt-0"
+      >
+        <a href="./index.html" class="nav-link-active" data-i18n="nav_home"
+          >Home</a
+        >
+        <a
+          href="./Pages/architecture.html"
+          class="nav-link"
+          data-i18n="nav_architecture"
+          >Architecture</a
+        >
+        <a
+          href="./Pages/firmware.html"
+          class="nav-link"
+          data-i18n="nav_firmware"
+          >Firmware</a
+        >
+        <a
+          href="./Pages/software.html"
+          class="nav-link"
+          data-i18n="nav_software"
+          >Software</a
+        >
+        <div class="relative z-50 flex items-center h-full">
+          <button
+            class="nav-link flex items-center gap-1 focus:outline-none h-full"
+            onclick="toggleDesktopDropdown(this)"
+          >
+            <span data-i18n="nav_sources">Sources</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <div
+            id="desktop-sources-menu"
+            class="dropdown-menu absolute left-0 top-full mt-2 w-48 rounded-lg shadow-xl hidden"
+          >
+            <div class="py-1 flex flex-col">
+              <a
+              href="https://gwfh.mranftl.com/fonts/inter?subsets=latin"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source1 dropdown-item block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >Google Fonts</a
+            >
+            <a
+              href="https://www.theengineeringprojects.com/2018/03/introduction-to-microcontrollers.html"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source2 dropdown-item block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >The Engineering Projects</a
+            >
+            <a
+              href="https://www.coursera.org/learn/computer-architecture"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source3 dropdown-item block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >Coursera</a
+            >
+            <a
+              href="https://www.embedded.com/embedded-firmware-what-is-it-and-why-does-it-matter/"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source4 dropdown-item block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >Embedded.com</a
+            >
+            <a
+              href="https://www.geeksforgeeks.org/finite-state-machines-in-embedded-systems/"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="source5 dropdown-item block py-2 text-base opacity-80 hover:text-[var(--accent)]"
+              >GeeksforGeeks</a
+            >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-3 ml-auto xl:ml-0">
+        <button
+          id="theme-toggle"
+          class="btn-outline w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
+        >
+          <svg
+            id="icon-sun"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
+          <svg
+            id="icon-moon"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            ></path>
+          </svg>
+        </button>
+        <button
+          id="lang-switcher"
+          class="btn-outline w-10 h-10 rounded-lg font-bold text-sm"
+          data-i18n="switchLang"
+        >
+          EN
+        </button>
+      </div>
+    </header>
+
+    <main class="px-6 pt-6 pb-0 md:px-12 md:pt-12 md:pb-0">
+      <div class="max-w-5xl mx-auto">
+        <section class="mb-8 mt-8 md:mb-24 text-center">
+          <h2
+            class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-none"
+          >
+            <span data-i18n="hero_title">Bring Life to</span><br />
+            <span class="hero-title" data-i18n="hero_title_highlight"
+              >Cold Metal</span
+            >
+          </h2>
+          <p
+            class="text-xl md:text-2xl opacity-80 leading-relaxed max-w-3xl mx-auto mb-10"
+            data-i18n="hero_subtitle"
+          >
+            Code capable of more than just displaying text. Embedded Systems is
+            applied Computer Science in the real world. Here, algorithms bridge
+            the gap between abstract logic and physical laws.
+          </p>
+          <div class="flex flex-row md:flex-row justify-center gap-4">
+            <a
+              href="./Pages/firmware.html"
+              class="btn-primary rounded-lg font-bold text-lg text-center"
+              data-i18n="btn_firmware"
+              >How it works</a
+            >
+            <a
+              href="./Pages/architecture.html"
+              class="btn-secondary rounded-lg text-lg font-bold text-center"
+              data-i18n="btn_software"
+              >About it</a
+            >
+          </div>
+        </section>
+
+        <section class="mb-8 md:mb-24 max-w-4xl mx-auto">
+          <div class="video-wrapper" id="video-wrapper">
+            <div class="video-placeholder-content">
+              <button id="play-video-btn" class="play-btn">
+                <svg class="ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+              <h3 class="text-2xl font-bold mb-2" data-i18n="video_title"></h3>
+              <p
+                class="opacity-80 max-w-md text-center px-4 mb-2"
+                data-i18n="video_desc"
+              >
+                Learn how code interacts with physical components to create
+                smart devices.
+              </p>
+              <p class="font-bold mt-4" data-i18n="video_btn"></p>
+            </div>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-0">
+          <div class="card p-8 rounded-2xl">
+            <div
+              class="mb-4 p-3 rounded-lg bg-accent inline-block text-white w-fit"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3" data-i18n="card1_title">
+              The Spark of Life
+            </h3>
+            <p
+              class="text-sm opacity-80 leading-relaxed"
+              data-i18n="card1_desc"
+            >
+              There is a unique joy when abstract code turns into real action.
+              You write a command, and the physical device blinks, moves, or
+              reacts. It is the magic of creation.
+            </p>
+          </div>
+          <div class="card p-8 rounded-2xl">
+            <div
+              class="mb-4 p-3 rounded-lg bg-accent inline-block text-white w-fit"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3" data-i18n="card2_title">
+              Valued Expertise
+            </h3>
+            <p
+              class="text-sm opacity-80 leading-relaxed"
+              data-i18n="card2_desc"
+            >
+              Hard skills are always in demand. Because this field requires
+              knowledge of both electronics and code, companies are willing to
+              invest in engineers who bridge these worlds.
+            </p>
+          </div>
+          <div class="card p-8 rounded-2xl">
+            <div
+              class="mb-4 p-3 rounded-lg bg-accent inline-block text-white w-fit"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3" data-i18n="card3_title">
+              Timeless Knowledge
+            </h3>
+            <p
+              class="text-sm opacity-80 leading-relaxed"
+              data-i18n="card3_desc"
+            >
+              Tech trends change, but physics does not. Understanding how a
+              processor actually works is a fundamental skill that will never go
+              out of style, unlike the latest web framework.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-12 text-center w-full">
+        <div
+          class="max-w-7xl mx-auto border-t border-[var(--border-color)] pt-8 pb-4 flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 hover:opacity-100 transition-opacity duration-300 px-4"
+        >
+          <div class="text-sm">
+            &copy; 2025.
+            <span data-i18n="footer_author"
+              >Made by Dmytro Voitsekhivsky st. group 3CS-25b</span
+            >
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="./JavaScript/data.js"></script>
+    <script src="./JavaScript/logic.js"></script>
+  </body>
+</html>
