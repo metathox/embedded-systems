@@ -17,7 +17,7 @@ const dictionary = {
         'sources': 'Вбудовані Системи: Джерела',
 
         // --- sources links ---
-        'source1': 'Шрифти Google',
+        'source1': 'Шрифти Inter',
         'source2': 'The Engineering Projects',
         'source3': 'Coursera',
         'source4': 'Embedded.com',
@@ -114,7 +114,7 @@ const dictionary = {
         'sources': 'Embedded Systems: Sources',
 
         // --- sources links ---
-        'source1': 'Google Fonts',
+        'source1': 'Inter Fonts',
         'source2': 'The Engineering Projects',
         'source3': 'Coursera',
         'source4': 'Embedded.com',
